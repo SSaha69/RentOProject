@@ -1,0 +1,53 @@
+<% include partials/header.ejs %>
+<h1>This is the cart!!</h1>
+
+<% var i,sum=0,price %>
+
+<% for (i = 0; i < item.length; i++) { %>
+  <% var x=quantity[i],month,week %>
+  <%=i+1%> <%= item[i].name %>  ----------  
+  
+	
+<%	if(x>=30){ %>
+<%		month=Math.floor(x/30); %>
+<%	x-=(30*month);%>
+<%		if(x>=7){ %>
+<%		week=Math.floor(x/7); %>
+<%		x-=(7*week);%>
+<%			if(x==0){  %>
+        <% price= (item[i].price_month * month)+(item[i].price_week * week)  %>
+        <%=price%>
+				
+<%			}else{  %>
+      <% price=(item[i].price_month * month)+(item[i].price_week * week)+(item[i].price_day * x)   %>
+			<%=price%>
+<%			} %>
+<%		}else{ %>
+      <% price=(item[i].price_month * month)   %>
+			<%=price %>
+<%	} %>
+<%	}else if(x>=7){ %>
+<%			week=Math.floor(x/7); %>
+<%			x-=(7*week); %>
+<%			if(x==0){ %>
+        <% price= (item[i].price_week * week)  %>
+				<%=price %>
+<%			}else{ %>
+        <% price= (item[i].price_week * week)+(item[i].price_day * x)  %>
+				 <%=price%>
+<%			} %>
+<%	}else{ %>
+    <% price=(item[i].price_day * x)   %>
+		<%=price %>
+<%	} %>
+  
+  <%sum=sum+price; %>
+  <a href="/cart/<%=item[i]._id%>/remove">Remove</a><br><br>
+  
+<%}%>
+
+<h3>Your total is : <%=sum%></h3>
+
+<a href="/orders/add">Checkout</a>
+
+<% include partials/footer.ejs %>

@@ -1,0 +1,21 @@
+<% include partials/header.ejs %>
+<div class="container">
+<div class="row">
+	<div class="col-md-12">
+		<form action="/change_pass" method="POST">
+		  <legend>Reset Password</legend>
+		  <div class="form-group">
+		    <label for="password">Old Password</label>
+		    <input type="password" name="oldpassword" value="" placeholder="Old password" autofocus="autofocus" class="form-control"/>
+		  </div>
+		  <div class="form-group">
+		    <label for="password">New Password</label>
+		    <input type="password" name="password" value="" placeholder="New password" autofocus="autofocus" class="form-control"/>
+		  </div>
+		  <div class="form-group">
+		    <button type="submit" class="btn btn-primary">Update Password</button>
+		  </div>
+		</form>
+	</div>
+</div>
+<% include partials/header.ejs %>

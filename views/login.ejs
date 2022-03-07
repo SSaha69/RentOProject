@@ -1,0 +1,130 @@
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>LogIn</title>
+        <style type="text/css"/>
+       @import url(https://fonts.googleapis.com/css?family=Dosis:300|Lato:300,400,600,700|Roboto+Condensed:300,700|Open+Sans+Condensed:300,600|Open+Sans:400,300,600,700|Maven+Pro:400,700);
+       @import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+       * {
+      -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+        }
+
+      html {
+        background: black;
+        }
+      body {
+  font-family: "Open Sans";
+  font-size: 16px;
+  color: White;
+  font-smoothing: antialiased;
+  font-weight: 600;
+}
+
+a {
+  color: #BBB;
+}
+.content:before{
+  content: "";
+  position:fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  background-color: black;
+  background-image: url("http://ultraimg.com/images/Ho6hQWs.jpg");
+  height: 100%;
+  background-size:cover;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+.content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 540px;
+  height: 400px;
+  background-color: rgba(10, 10, 10, 0.5);
+  margin: auto auto;
+  padding: 40px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px black;
+}
+.content .title {
+  text-align: center;
+  font-size: 2.0rem;
+  font-weight: 600;
+  padding-bottom: 30px;
+}
+.content input {
+  width: 100%;
+  font-size: 1.2rem;
+  font-family: "Open Sans";
+  margin: 10px 0px;
+  border: none;
+  padding: 10px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.content button {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 10px;
+  margin: 20px 0px;
+  background-color: #66A756;
+  color: White;
+  border: none;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.content .create {
+  text-align: center;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+  <% if(error && error.length>0){ %>
+    <div id="center">
+        <div class="alert alert-danger " >
+          <strong id="center"><%=error%></strong>
+            </div>
+    </div>
+    <% } %>
+    
+    <% if(success && success.length>0){ %>
+    <div id="center">
+        <div class="alert alert-success" >
+          <strong ><%=success%></strong>
+        </div>
+    </div>
+        
+    <% } %>
+
+  
+<div class="content">
+    <div class="title">Log In</div>
+<form method="POST" action="/login">
+    <input type="text" name=username placeholder="Enter username">
+    <input type="password" name=password placeholder="Enter password">
+    <button>Log In</button>
+    <div class="create"><a href="/forgot">Forgot Password? </a></div>
+    <div class="create">Don't have an account? <a href="/register">Sign Up</a></div>
+    </div>
+</form>
+</body>
+</html>

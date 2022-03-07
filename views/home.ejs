@@ -1,0 +1,1122 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Rent | Home</title>
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="./css/fontAwesome.css">
+        <link rel="stylesheet" href="./css/hero-slider.css">
+        <link rel="stylesheet" href="./css/owl-carousel.css">
+        <link rel="stylesheet" href="./css/datepicker.css">
+        <link rel="stylesheet" href="./css/templatemo-style.css">
+        <link rel="stylesheet" href="./css/main.css">  
+        <link rel="stylesheet" href="./css/base.css">
+        <link rel="stylesheet" href="./css/vendor.css">
+         <link rel="stylesheet" href="./css/style.css">
+         <link rel="stylesheet" href="./css/slick.css">
+         <link rel="stylesheet" href="./css/slick-theme.css">
+         <!--<link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css">-->
+         <link rel="stylesheet" href="./css/bootstrap/nouislider.min.css">
+
+        <!-- <link href="https://s.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet"> -->
+
+       <!--  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
+        <script src="js/modernizr.js"></script>
+        <script src="js/pace.min.js"></script>
+<!--
+	Venue Template
+	http://www.templatemo.com/tm-522-venue
+-->
+<style>
+		
+</style>
+<script>
+    $(document).ready(function(){
+        $("#al").click(function(){
+            alert("hi");
+            });
+    })
+             
+</script>
+</head>             
+  <body id="top">
+  	
+<% if(!currentuser){ %>
+<header>
+   <a id="header-menu-trigger" href="#0">
+            <span class="header-menu-text">Menu</span>
+            <span class="header-menu-icon"></span>
+        </a> 
+
+        <nav id="menu-nav-wrap">
+
+            <a href="#0" class="close-button" title="close"><span>Close</span></a>  
+
+        <h3>Infinity.</h3>  
+
+            <ul class="nav-list">
+                <li class="current"><a class="smoothscroll" href="#home" title="">Home</a></li>
+                <li><a class="smoothscroll" href="#about" title="">About</a></li>
+                <li><a  href="/login" title="">Login</a></li>
+                <li><a  href="/register" title="">Register</a></li>
+                <li><a class="smoothscroll" href="#contact" title="">Contact</a></li>                       
+            </ul>   
+
+            <p class="sponsor-text">
+                Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">DreamHost</a>.
+                Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>. 
+                <!-- Simply type    the promocode in the box labeled “Promo Code” when placing your order. -->
+            </p>            
+
+            <ul class="header-social-list">
+             <li>
+                <a href="#"><i class="fa fa-facebook-square"></i></a>
+             </li>
+             <li>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+             </li>
+             <li>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+             </li>
+            <li>
+                <a href="#"><i class="fa fa-behance"></i></a>
+            </li>
+             <li>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+             </li>           
+          </ul>     
+
+        </nav>  <!-- end #menu-nav-wrap -->
+
+    </header> <!-- end header -->  
+   
+<% }else { %>
+    <header> 
+
+   	<!--<div class="header-logo">-->
+	   <!--   <a href="/">Infinity</a>-->
+	   <!--</div> -->
+
+		<a id="header-menu-trigger" href="#0">
+		 	<span class="header-menu-text">Menu</span>
+		  	<span class="header-menu-icon"></span>
+		</a> 
+
+		<nav id="menu-nav-wrap">
+
+			<a href="#0" class="close-button" title="close"><span>Close</span></a>	
+
+	   	<h3>Rent.</h3>  
+
+			<ul class="nav-list">
+			    <li><a class="smoothscroll"><form action="/search" method="POST">
+            <!--<input  type="search" placeholder="Search" aria-label="Search" name=query >-->
+            <!--<button type="submit">Search</button>-->
+        </form></a></li>
+				<li class="current"><a href="/profile" title=""><%= currentuser.username%></a></li>
+				<li><a  href="/my_items" title="">My items</a></li>
+				<li><a  href="/new_item" title="">Create item</a></li>
+				<li><a  href="/cart" title="">Cart</a></li>
+				<li><a  href="/orders">Orders</a></li>
+        <li><a href="/logout">LogOut</a></li>
+				<li><a  href="#contact" title="">Contact</a></li>						
+			</ul>	
+
+			<p class="sponsor-text">
+				Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">DreamHost</a>.
+				Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>. 
+				<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->
+			</p>			
+
+			<ul class="header-social-list">
+	         <li>
+	         	<a href="#"><i class="fa fa-facebook-square"></i></a>
+	         </li>
+	         <li>
+	         	<a href="#"><i class="fa fa-twitter"></i></a>
+	         </li>
+	         <li>
+	         	<a href="#"><i class="fa fa-instagram"></i></a>
+	         </li>
+            <li>
+            	<a href="#"><i class="fa fa-behance"></i></a>
+            </li>
+	         <li>
+	         	<a href="#"><i class="fa fa-dribbble"></i></a>
+	         </li>	         
+	      </ul>		
+
+		</nav>  <!-- end #menu-nav-wrap -->
+
+	</header> <!-- end header --> 
+	
+	     
+	
+	
+	
+    
+<% } %>
+
+ <section id="home">
+
+    <div class="overlay"></div>
+
+    <div class="home-content-table">    
+           <div class="home-content-tablecell">
+            <div class="row">
+                <div class="col-twelve">                    
+                    
+                            <h3 class="animate-intro">We Are Infinity.</h3>
+                            <h1 class="animate-intro">
+                            We Craft Stunning  <br>
+                            Digital Experiences.
+                            </h1> 
+                            
+                            
+                            
+                            <div class="container">
+           
+                    <div class="submit-form">
+                        <form id="form-submit" action="/search" method="post">
+                            <div class="row" id="formleft">
+    
+                                <div class="col-md-3 second-item">
+                                    <fieldset>
+                                        <input name="query" type="text" class="form-control" id="location" placeholder="Search your item..." required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-3 third-item">
+                                    <fieldset>
+                                        <select required name='category' onchange='this.form.()'>
+                                            <option value="">Select category...</option>
+                                            <option value="electronics">Electronics</option>
+                                            <option value="car">Cars</option>
+                                            <option value="Restaurants">Restaurants</option>
+                                            <option value="Events">Events</option>
+                                            <option value="Meetings">Meetings</option>
+                                            <option value="Fitness">Fitness</option>
+                                            <option value="Cafes">Cafes</option>
+                                        </select>
+                                    </fieldset>
+                                </div>
+                                
+                
+                                
+                                <div class="col-md-3">
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="buttoncircle" class="btn">Search Now</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> 
+                <!-- <div class="more animate-intro">-->
+                <!--                <a class="smoothscroll button stroke" href="#about">-->
+                <!--                    Learn More-->
+                <!--                </a>-->
+                <!--</div>                          -->
+
+                    </div> <!-- end col-twelve -->
+                                                   
+            </div> <!-- end row --> 
+           </div> <!-- end home-content-tablecell -->          
+        </div> <!-- end home-content-table -->
+
+        <ul class="home-social-list">
+          <li class="animate-intro">
+                <a href="#"><i class="fa fa-facebook-square"></i></a>
+          </li>
+          <li class="animate-intro">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li class="animate-intro">
+                <a href="#"><i class="fa fa-instagram"></i></a>
+          </li>
+         <li class="animate-intro">
+            <a href="#"><i class="fa fa-behance"></i></a>
+         </li>
+          <li class="animate-intro">
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+          </li>       
+       </ul> <!-- end home-social-list -->  
+
+        <div class="scrolldown">
+            <a href="#about" class="scroll-icon smoothscroll">      
+            Scroll Down         
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div> 
+       <!--  <div class="container">
+            <div class="row"> -->
+       <!--      </div>
+        </div>         
+    -->
+   </section> <!-- end home -->
+    
+     <section id="about">
+
+    <div class="row about-wrap">
+        <div class="col-full">
+
+            <div class="about-profile-bg"></div>
+
+                <div class="intro">
+                    <h3 class="animate-this">About Us</h3>
+                <p class="lead animate-this"><span>Infinity</span> is a creative digital agency based in Manila, Philippines. We are composed of creative designers and experienced developers.</p> 
+                </div>   
+
+        </div> <!-- end col-full  -->
+    </div> <!-- end about-wrap  -->
+
+   </section> <!-- end about -->
+
+    <section class="popular-places" id="popular">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <span>Popular Places</span>
+                        <h2>Integer sapien odio</h2>
+                    </div>
+                </div> 
+            </div> 
+            <div class="owl-carousel owl-theme" id="owl-example">
+                <% var i=0; %>
+               <% item.slice().reverse().forEach(function(item){ %>
+               <% if(i<=9){ %>
+                <a href="/item/<%=item._id%>" class="overlay">
+                            <div class="item popular-item">
+                    <div class="thumb">
+                        <img src="/uploads/<%=item.image %>" alt="">
+                        <div class="text-content">
+                            <h4>Mauris tempus</h4>
+                            <span>76 listings</span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+               <%} %>
+   
+                <% i++; %>
+                <%}) %>
+            </div>
+        </div>
+    </section>
+    <div id="hot-deal" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="hot-deal">
+							<ul class="hot-deal-countdown">
+								<li>
+									<div>
+										<h3>02</h3>
+										<span>Days</span>
+									</div>
+								</li>
+								<li>
+									<div>
+										<h3>10</h3>
+										<span>Hours</span>
+									</div>
+								</li>
+								<li>
+									<div>
+										<h3>34</h3>
+										<span>Mins</span>
+									</div>
+								</li>
+								<li>
+									<div>
+										<h3>60</h3>
+										<span>Secs</span>
+									</div>
+								</li>
+							</ul>
+							<h2 class="text-uppercase">hot deal this week</h2>
+							<p>New Collection Up to 50% OFF</p>
+							<a class="primary-btn cta-btn" href="#">Shop now</a>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+    <section id="portfolio">
+   	
+   	<div class="intro-wrap">
+
+   		<div class="row narrow section-intro with-bottom-sep animate-this">
+	   		<div class="col-twelve">
+	   			<h3>Showcase</h3>
+		   		<h1 id="al" >See Our Categories.</h1>  			
+		   		
+		   		<p class="lead">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>	   			
+	   		</div>   		
+	   	</div> <!-- end row section-intro -->   		
+
+   	</div> <!-- end intro-wrap -->   	
+
+   	<div class="row portfolio-content">
+   	    <!--<form method="GET" action="/profile" class="catimg" style="display:none">-->
+   	    <!--    <button class="catimg"></button>-->
+   	    <!--</form>-->
+   		<div class="col-twelve">
+   			<div id="folio-wrap" class="bricks-wrapper">					
+
+   				<div class="brick folio-item " >
+	               <div class="item-wrap animate-this" data-src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" data-sub-html="#01" > 	
+	                  <a href="/catitems/electronics" class="overlay">
+	                  	<img src="img/portfolio/shutterbug.jpg" alt="Skaterboy">	                     
+	                     <div class="item-text">
+	                     	<span class="folio-types">
+		     					      Cameras
+		     					   </span>
+		     					   <h3 class="folio-title">Company</h3>	     					   
+		     					</div>                                        
+	                  </a>
+	               </div> <!-- end item-wrap -->
+						
+						<div id="01" class='hide'>
+							<h4>Shutterbug</h4>
+							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat velit. <a href="https://www.behance.net/">Details</a></p>
+						</div>
+	        		</div> <!-- end folio-item -->
+
+	        		<div class="brick folio-item">
+	               <div class="item-wrap animate-this" data-src="img/portfolio/gallery/g-yellowwall.jpg" data-sub-html="#02"> 	
+	                  <a href="/catitems/vehicles" class="overlay">
+	                  	<img src="img/portfolio/yellowwall.jpg" alt="Shutterbug">	                     
+	                     <div class="item-text">
+	                     	<span class="folio-types">
+		     					      Marketing
+		     					   </span>
+		     					   <h3 class="folio-title">Yellow Wall</h3>  	     					   
+		     					</div>                                        
+	                  </a>
+	               </div> <!-- end item-wrap -->
+
+	               <div id="02" class='hide'>
+							<h4>Yellow Wall</h4>
+							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat velit. <a href="https://www.behance.net/">Details</a></p>
+						</div>	               
+	        		</div> <!-- end folio-item -->
+
+	        		<div class="brick folio-item">
+	               <div class="item-wrap animate-this" data-src="img/portfolio/gallery/g-architecture.jpg" data-sub-html="#03" >   	
+	                  <a href="/catitems/furnitures" class="overlay">
+	                  	<img src="img/portfolio/architecture.jpg" alt="Explore">	                     
+	                     <div class="item-text">	                     		     					    
+		     					   <span class="folio-types">
+		     					      Web Design
+		     					   </span>
+		     					   <h3 class="folio-title">Architecture</h3>
+		     					</div>                                        
+	                  </a>
+	               </div> <!-- end item-wrap -->	
+
+	               <div id="03" class='hide'>
+							<h4>Architecture</h4>
+							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat velit. <a href="https://www.behance.net/">Details</a></p>
+						</div>               
+	        		</div> <!-- end folio-item -->
+
+					<div class="brick folio-item">
+	               <div class="item-wrap animate-this"  data-src="img/portfolio/gallery/g-minimalismo.jpg"  data-sub-html="#04" >
+	                  <a href="/catitems/clothings" class="overlay">
+	                  	<img src="img/portfolio/minimalismo.jpg" alt="Minimalismo">	                     
+	                     <div class="item-text">	     					    
+		     					   <span class="folio-types">
+		     					      Web Design
+		     					   </span>
+		     					   <h3 class="folio-title">Minimalismo</h3>
+		     					</div>                                        
+	                  </a>
+	               </div> <!-- end item-wrap -->
+
+	               <div id="04" class='hide'>
+							<h4>Minimalismo</h4>
+							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat velit. <a href="https://www.behance.net/">Details</a></p>
+						</div>  	               
+	        		</div> <!-- end folio-item -->
+
+					<div class="brick folio-item">
+	               <div class="item-wrap animate-this"  data-src="img/portfolio/gallery/g-skaterboy.jpg"  data-sub-html="#05" >  	
+	                  <a href="/catitems/kitchen" class="overlay">
+	                  	<img src="img/portfolio/skaterboy.jpg" alt="Bicycle">	                     
+	                     <div class="item-text">	     					    
+		     					   <span class="folio-types">
+		     					      Branding
+		     					   </span>
+		     					   <h3 class="folio-title">Skaterboy</h3>
+		     					</div>                                        
+	                  </a>
+	               </div> <!-- end item-wrap -->
+
+	               <div id="05" class='hide'>
+							<h4>Skaterboy</h4>
+							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat velit. <a href="https://www.behance.net/">Details</a></p>
+						</div>	               
+	        		</div> <!-- end folio-item -->
+	           
+					<div class="brick folio-item">
+	               <div class="item-wrap animate-this"  data-src="img/portfolio/gallery/g-salad.jpg"  data-sub-html="#06">     	
+	                  <a href="/catitems/sports" class="overlay">
+	                  	<img src="img/portfolio/salad.jpg" alt="Salad">	                     
+	                     <div class="item-text">	     					    
+		     					   <span class="folio-types">
+		     					      Branding
+		     					   </span>
+		     					   <h3 class="folio-title">Salad</h3>
+		     					</div>                                        
+	                  </a>
+	               </div> <!-- end item-wrap -->
+
+	               <div id="06" class='hide'>
+							<h4>Salad</h4>
+							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat velit. <a href="www.behance.net">Details</a></p>
+						</div>	               
+	        		</div> <!-- end folio-item -->   				
+
+   			</div> <!-- end folio-wrap -->
+   		</div> <!-- end twelve -->
+   	</div> <!-- end portfolio-content -->   	
+
+   </section>  <!-- end portfolio -->
+   <!--<section id="pics">-->
+      <!--<div id="fh5co-main">-->
+      <!--      <div class="fh5co-gallery">-->
+
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Nature</h2>-->
+      <!--                  <span>14 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>People</h2>-->
+      <!--                  <span>7 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Sky</h2>-->
+      <!--                  <span>22 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Building</h2>-->
+      <!--                  <span>28 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>People 2</h2>-->
+      <!--                  <span>17 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Beach</h2>-->
+      <!--                  <span>34 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Vegetarian Food</h2>-->
+      <!--                  <span>10 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Travel</h2>-->
+      <!--                  <span>19 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Family</h2>-->
+      <!--                  <span>42 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Food</h2>-->
+      <!--                  <span>10 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Gadgets</h2>-->
+      <!--                  <span>76 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Cars</h2>-->
+      <!--                  <span>55 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Animals</h2>-->
+      <!--                  <span>47 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Building 2</h2>-->
+      <!--                  <span>10 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Baloon</h2>-->
+      <!--                  <span>17 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--          <a class="gallery-item" href="single.html">-->
+      <!--              <img src="https://images3.alphacoders.com/823/82317.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">-->
+      <!--              <span class="overlay">-->
+      <!--                  <h2>Animals 2</h2>-->
+      <!--                  <span>22 Photos</span>-->
+      <!--              </span>-->
+      <!--          </a>-->
+      <!--      </div>-->
+      <!--      </div>-->
+            <!--</section>-->
+    <!--<section id="video-container">-->
+    <!--    <div class="video-overlay"></div>-->
+    <!--    <div class="video-content">-->
+    <!--        <div class="inner">-->
+    <!--            <span>Video Presentation</span>-->
+    <!--            <h2>Sed et risus ac sapien congue mattis.</h2>-->
+    <!--            <a href="http://youtube.com" target="_blank"><i class="fa fa-play"></i></a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <video autoplay="" loop="" muted>-->
+    <!--    	<source src="highway-loop.mp4" type="video/mp4" />-->
+    <!--    </video>-->
+    <!--</section>-->
+  <!--  <div class="section">-->
+			<!-- container -->
+		<!--	<div class="container">-->
+				<!-- row -->
+		<!--		<div class="row">-->
+		<!--			<div class="col-md-4 col-xs-6">-->
+		<!--				<div class="section-title">-->
+		<!--					<h4 class="title">Top selling</h4>-->
+		<!--					<div class="section-nav">-->
+		<!--						<div id="slick-nav-3" class="products-slick-nav"></div>-->
+		<!--					</div>-->
+		<!--				</div>-->
+
+		<!--				<div class="products-widget-slick" data-nav="#slick-nav-3">-->
+		<!--					<div>-->
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product07.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- /product widget -->
+
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product08.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- /product widget -->
+
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product09.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- product widget -->
+		<!--					</div>-->
+
+		<!--					<div>-->
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product01.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- /product widget -->
+
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product02.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- /product widget -->
+
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product03.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- product widget -->
+		<!--					</div>-->
+		<!--				</div>-->
+		<!--			</div>-->
+
+		<!--			<div class="col-md-4 col-xs-6">-->
+		<!--				<div class="section-title">-->
+		<!--					<h4 class="title">Top selling</h4>-->
+		<!--					<div class="section-nav">-->
+		<!--						<div id="slick-nav-4" class="products-slick-nav"></div>-->
+		<!--					</div>-->
+		<!--				</div>-->
+
+		<!--				<div class="products-widget-slick" data-nav="#slick-nav-4">-->
+		<!--					<div>-->
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product04.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- /product widget -->
+
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product05.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- /product widget -->
+
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product06.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- product widget -->
+		<!--					</div>-->
+
+		<!--					<div>-->
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product07.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- /product widget -->
+
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product08.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- /product widget -->
+
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product09.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- product widget -->
+		<!--					</div>-->
+		<!--				</div>-->
+		<!--			</div>-->
+
+		<!--			<div class="clearfix visible-sm visible-xs"></div>-->
+
+		<!--			<div class="col-md-4 col-xs-6">-->
+		<!--				<div class="section-title">-->
+		<!--					<h4 class="title">Top selling</h4>-->
+		<!--					<div class="section-nav">-->
+		<!--						<div id="slick-nav-5" class="products-slick-nav"></div>-->
+		<!--					</div>-->
+		<!--				</div>-->
+
+		<!--				<div class="products-widget-slick" data-nav="#slick-nav-5">-->
+		<!--					<div>-->
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product01.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- /product widget -->
+
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product02.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- /product widget -->
+
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product03.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- product widget -->
+		<!--					</div>-->
+
+		<!--					<div>-->
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product04.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- /product widget -->
+
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product05.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- /product widget -->
+
+								<!-- product widget -->
+		<!--						<div class="product-widget">-->
+		<!--							<div class="product-img">-->
+		<!--								<img src="./img/product06.png" alt="">-->
+		<!--							</div>-->
+		<!--							<div class="product-body">-->
+		<!--								<p class="product-category">Category</p>-->
+		<!--								<h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+		<!--								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>-->
+		<!--							</div>-->
+		<!--						</div>-->
+								<!-- product widget -->
+		<!--					</div>-->
+		<!--				</div>-->
+		<!--			</div>-->
+
+		<!--		</div>-->
+				<!-- /row -->
+		<!--	</div>-->
+			<!-- /container -->
+		<!--</div>-->
+		<!-- /SECTION -->
+  <section id="contact">
+      <div class="overlay"></div>
+
+        <div class="row narrow section-intro with-bottom-sep animate-this">
+        <div class="col-twelve">
+            <h3>Contact</h3>
+            <h1>Get In Touch.</h1>
+
+            <p class="lead">Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
+        </div> 
+    </div> <!-- end section-intro -->
+
+    <div class="row contact-content">
+
+        <div class="col-seven tab-full animate-this">
+
+            <h5>Send Us A Message</h5>
+
+            <!-- form -->
+            <form name="contactForm" id="contactForm" method="post">                
+
+               <div class="form-field">
+                       <input name="username" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
+               </div>
+
+               <div class="row">
+                    <div class="col-six tab-full">
+                        <div class="form-field">
+                            <input name="email" type="email" id="contactEmail" placeholder="Email" value="" required="">
+                        </div>                         
+                    </div>
+                    <div class="col-six tab-full">              
+                        <div class="form-field">
+                            <input name="subject" type="text" id="contactSubject" placeholder="Subject" value="">
+                      </div>                               
+                    </div>
+               </div>
+                                         
+               <div class="form-field">
+                    <textarea name="message" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
+                </div> 
+
+               <div class="form-field">
+                  <button class="submitform">Submit</button>
+
+                  <div id="submit-loader">
+                     <div class="text-loader">Sending...</div>                             
+                      <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+               </div>
+            </form> <!-- end form -->
+
+            <!-- contact-warning -->
+            <div id="message-warning"></div> 
+
+            <!-- contact-success -->
+            <div id="message-success">
+               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+            </div>
+
+         </div> <!-- end col-seven --> 
+
+         <div class="col-four tab-full contact-info end animate-this">
+
+            <h5>Contact Information</h5>
+
+            <div class="cinfo">
+                <h6>Where to Find Us</h6>
+                <p>
+                    1600 Amphitheatre Parkway<br>
+                    Mountain View, CA<br>
+                    94043 US
+                </p>
+            </div> <!-- end cinfo -->
+
+            <div class="cinfo">
+                <h6>Email Us At</h6>
+                <p>
+                    someone@infinitysite.com<br>
+                    info@infinitysite.com                
+                   </p>
+            </div> <!-- end cinfo -->
+
+            <div class="cinfo">
+                <h6>Call Us At</h6>
+                <p>
+                    Phone: (+63) 555 1212<br>
+                    Mobile: (+63) 555 0100<br>
+                        Fax: (+63) 555 0101
+                   </p>
+            </div>
+
+         </div> <!-- end cinfo --> 
+
+    </div> <!-- end row contact-content -->
+        
+    </section> <!-- end contact -->
+
+
+
+   <footer>
+        <div class="footer-main">
+
+        <div class="row">  
+
+            <div class="col-five tab-full footer-about">       
+
+                <h4 class="h05">Infinity.</h4>
+
+                <p>Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt. Nulla porttitor accumsan tincidunt. Proin eget tortor risus.</p>               
+
+              </div> <!-- end footer-about -->
+
+            <div class="col-three tab-full footer-social">
+
+                <h4 class="h05">Follow Us.</h4>
+
+                <ul class="list-links">
+                    <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Behance</a></li>
+                        <li><a href="#">Dribble</a></li>                        
+                    </ul>
+
+            </div> <!-- end footer-social -->  
+
+            <div class="col-four tab-full footer-subscribe end">
+
+                <h4 class="h05">Get Notified.</h4>
+
+                <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa.</p>
+
+                <div class="subscribe-form">
+            
+                    <form id="mc-form" class="group" novalidate="true">
+
+                            <input type="email" value="" name="dEmail" class="email" id="mc-email" placeholder="type email" required=""> 
+            
+                        <!-- <input type="submit" name="subscribe" > -->
+                        <button><i class="icon-mail"></i></button>
+            
+                        <label for="mc-email" class="subscribe-message"></label>
+            
+                        </form>
+
+                </div>
+                        
+            </div> <!-- end footer-subscribe -->            
+
+          </div> <!-- end row -->
+
+    </div> <!-- end footer-main -->
+
+    <div class="footer-bottom">
+
+        <div class="row">
+
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>© Copyright Infinity 2016.</span> 
+                    <span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>                  
+                 </div>                    
+            </div>
+
+        </div>      
+
+      </div> <!-- end footer-bottom -->
+
+      <div id="go-top">
+           <a class="smoothscroll" title="Back to Top" href="#top">
+            <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+           </a>
+        </div>      
+   </footer>
+    <div id="preloader"> 
+        <div id="loader"></div>
+   </div> 
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>
+   <!--  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
+
+    <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jscript.js"></script>
+    
+
+</body>
+</html>
+

@@ -1,0 +1,14 @@
+<% include partials/header.ejs %>
+<h1>This is the bank details!!</h1>
+
+ <% bank.forEach(function(bank){ %>
+    
+    
+    Account holder name::<%=bank.name%> <br>
+    Account No: XXXXXXXXXX<br>
+    IFSC:  <%= bank.ifsc%> <br><br>
+    <% }); %>
+
+<a href="/bank_details/add">Add a new bank account</a>
+
+<% include partials/footer.ejs %>

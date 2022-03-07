@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Cart | E-Shopper</title>
+    <link href="../cart/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../cart/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../cart/css/prettyPhoto.css" rel="stylesheet">
+    <link href="../cart/css/price-range.css" rel="stylesheet">
+    <link href="../cart/css/animate.css" rel="stylesheet">
+	<link href="../cart/css/main.css" rel="stylesheet">
+	<link href="../cart/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../cart/js/html5shiv.js"></script>
+    <script src="../cart/js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../cart/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../cart/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../cart/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../cart/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+	 <header>
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<form class="form-inline" method="POST" action="/search">
+									<select class="input-select" name='category'>
+										<option value="">Select category...</option>
+                                        <option value="phone">Phones</option>
+                                        <option value="car">Cars</option>
+                                        <option value="Restaurants">Restaurants</option>
+                                        <option value="Events">Events</option>
+                                        <option value="Meetings">Meetings</option>
+                                        <option value="Fitness">Fitness</option>
+                                        <option value="Cafes">Cafes</option>
+									</select>
+									<input class="input" placeholder="Search here" name="query">
+									<button class="search-btn">Search</button>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-6 clearfix">
+							<div class="header-ctn">
+						<div class="menu-toggle">
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Menu</span>
+									</a>
+								</div>
+									</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+						</header>
+		<% if(!currentuser){ %>
+<header>
+   <a id="header-menu-trigger" href="#0">
+            <span class="header-menu-text">Menu</span>
+            <span class="header-menu-icon"></span>
+        </a> 
+
+        <nav id="menu-nav-wrap">
+
+            <a href="#0" class="close-button" title="close"><span>Close</span></a>  
+
+        <h3>Infinity.</h3>  
+
+            <ul class="nav-list">
+                <li class="current"><a href="/" title="">Home</a></li>
+                <li><a class="smoothscroll" href="#about" title="">About</a></li>
+                <li><a  href="/login" title="">Login</a></li>
+                <li><a  href="/register" title="">Register</a></li>
+                <li><a class="smoothscroll" href="#contact" title="">Contact</a></li>                       
+            </ul>   
+
+            <p class="sponsor-text">
+                Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">DreamHost</a>.
+                Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>. 
+                <!-- Simply type    the promocode in the box labeled “Promo Code” when placing your order. -->
+            </p>            
+
+            <ul class="header-social-list">
+             <li>
+                <a href="#"><i class="fa fa-facebook-square"></i></a>
+             </li>
+             <li>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+             </li>
+             <li>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+             </li>
+            <li>
+                <a href="#"><i class="fa fa-behance"></i></a>
+            </li>
+             <li>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+             </li>           
+          </ul>     
+
+        </nav>  <!-- end #menu-nav-wrap -->
+
+    </header> <!-- end header -->  
+   
+<% }else { %>
+    <header> 
+
+   	<!--<div class="header-logo">-->
+	   <!--   <a href="/">Infinity</a>-->
+	   <!--</div> -->
+
+		<a id="header-menu-trigger" href="#0">
+		 	<span class="header-menu-text">Menu</span>
+		  	<span class="header-menu-icon"></span>
+		</a> 
+
+		<nav id="menu-nav-wrap">
+
+			<a href="#0" class="close-button" title="close"><span>Close</span></a>	
+
+	   	<h3>Rent.</h3>  
+
+			<ul class="nav-list">
+			    <li><a class="smoothscroll"><form action="/search" method="POST">
+            <!--<input  type="search" placeholder="Search" aria-label="Search" name=query >-->
+            <!--<button type="submit">Search</button>-->
+        </form></a></li>
+				<li class="current"><a href="/profile" title=""><%= currentuser.username%></a></li>
+				<li><a  href="/my_items" title="">My items</a></li>
+				<li><a  href="/new_item" title="">Create item</a></li>
+				<li><a  href="/cart" title="">Cart</a></li>
+				<li><a  href="/orders">Orders</a></li>
+        <li><a href="/logout">LogOut</a></li>
+				<li><a  href="#contact" title="">Contact</a></li>						
+			</ul>	
+
+			<p class="sponsor-text">
+				Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">DreamHost</a>.
+				Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>. 
+				<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->
+			</p>			
+
+			<ul class="header-social-list">
+	         <li>
+	         	<a href="#"><i class="fa fa-facebook-square"></i></a>
+	         </li>
+	         <li>
+	         	<a href="#"><i class="fa fa-twitter"></i></a>
+	         </li>
+	         <li>
+	         	<a href="#"><i class="fa fa-instagram"></i></a>
+	         </li>
+            <li>
+            	<a href="#"><i class="fa fa-behance"></i></a>
+            </li>
+	         <li>
+	         	<a href="#"><i class="fa fa-dribbble"></i></a>
+	         </li>	         
+	      </ul>		
+
+		</nav>  <!-- end #menu-nav-wrap -->
+
+	</header> <!-- end header --> 
+	
+	     
+	
+	
+	
+    
+<% } %>
+
+
+
+
+	<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#">Hot Deals</a></li>
+						<li><a href="#">Categories</a></li>
+						<li><a href="#">Laptops</a></li>
+						<li><a href="#">Smartphones</a></li>
+						<li><a href="#">Cameras</a></li>
+						<li><a href="#">Accessories</a></li>
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+<div id="breadcrumb" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="breadcrumb-tree">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">All Categories</a></li>
+							<li><a href="#">Accessories</a></li>
+							<li class="active">Headphones (227,490 Results)</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		</div>
+<section id="cart_items">
+		<div class="container">
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="image">Item</td>
+							<td class="description"></td>
+							<td class="price">Price</td>
+							<td class="quantity">Quantity</td>
+							<td class="total">Total</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						
+						<% var i,sum=0,price %>
+
+							<% for (i = 0; i < item.length; i++) { %>
+							  <% var x=quantity[i],month,week %>
+							 
+							  
+								
+							<%	if(x>=30){ %>
+							<%		month=Math.floor(x/30); %>
+							<%	x-=(30*month);%>
+							<%		if(x>=7){ %>
+							<%		week=Math.floor(x/7); %>
+							<%		x-=(7*week);%>
+							<%			if(x==0){  %>
+							        <% price= (item[i].price_month * month)+(item[i].price_week * week)  %>
+							        
+											
+							<%			}else{  %>
+							      <% price=(item[i].price_month * month)+(item[i].price_week * week)+(item[i].price_day * x)   %>
+										
+							<%			} %>
+							<%		}else{ %>
+							      <% price=(item[i].price_month * month)   %>
+										<%=price %>
+							<%	} %>
+							<%	}else if(x>=7){ %>
+							<%			week=Math.floor(x/7); %>
+							<%			x-=(7*week); %>
+							<%			if(x==0){ %>
+							        <% price= (item[i].price_week * week)  %>
+											<%=price %>
+							<%			}else{ %>
+							        <% price= (item[i].price_week * week)+(item[i].price_day * x)  %>
+											 
+							<%			} %>
+							<%	}else{ %>
+							    <% price=(item[i].price_day * x)   %>
+									
+							<%	} %>
+							  
+							  <%sum=sum+price; %>
+						<tr>
+							
+							
+								<td class="cart_product">
+									<a href="/item/<%=item[i]._id%>"><img src="/uploads/<%=item[i].image%>" alt=""></a>
+								</td>
+								<td class="cart_description">
+									<h4><a href="/item/<%=item[i]._id%>"><%=item[i].name%></a></h4>
+									<p>Web ID: 1089772</p>
+								</td>
+								<td class="cart_price">
+									<p><%=item[i].price_day%></p>
+								</td>
+								<td class="cart_quantity">
+									<div class="cart_quantity_button">
+										<a class="cart_quantity_up" href="/cart/<%=cart._id%>/<%=i%>/up"> + </a>
+										<input class="cart_quantity_input" type="text" name="quantity" value="<%=quantity[i]%>" autocomplete="off" size="2">
+										<a class="cart_quantity_down" href="/cart/<%=cart._id%>/<%=i%>/down"> - </a>
+									</div>
+								</td>
+								<td class="cart_total">
+									<p class="cart_total_price"><%=price%></p>
+								</td>
+								<td class="cart_delete">
+									<a class="cart_quantity_delete" href="/cart/<%=item[i]._id%>/remove"><i class="fa fa-times"></i></a>
+								</td>
+						</tr>
+						 
+						
+					<%}%>
+
+						
+						
+						
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section> <!--/#cart_items-->
+
+	<section id="do_action">
+		<div class="container">
+			<div class="heading">
+				<h3>What would you like to do next?</h3>
+				<p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="chose_area">
+						<ul class="user_option">
+							<li>
+								<input type="checkbox">
+								<label>Use Coupon Code</label>
+							</li>
+							<li>
+								<input type="checkbox">
+								<label>Use Gift Voucher</label>
+							</li>
+							<li>
+								<input type="checkbox">
+								<label>Estimate Shipping & Taxes</label>
+							</li>
+						</ul>
+						<ul class="user_info">
+							<li class="single_field">
+								<label>Country:</label>
+								<select>
+									<option>United States</option>
+									<option>Bangladesh</option>
+									<option>UK</option>
+									<option>India</option>
+									<option>Pakistan</option>
+									<option>Ucrane</option>
+									<option>Canada</option>
+									<option>Dubai</option>
+								</select>
+								
+							</li>
+							<li class="single_field">
+								<label>Region / State:</label>
+								<select>
+									<option>Select</option>
+									<option>Dhaka</option>
+									<option>London</option>
+									<option>Dillih</option>
+									<option>Lahore</option>
+									<option>Alaska</option>
+									<option>Canada</option>
+									<option>Dubai</option>
+								</select>
+							
+							</li>
+							<li class="single_field zip-field">
+								<label>Zip Code:</label>
+								<input type="text">
+							</li>
+						</ul>
+						<a class="btn btn-default update" href="">Get Quotes</a>
+						<a class="btn btn-default check_out" href="">Continue</a>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="total_area">
+						<ul>
+							<li>Cart Sub Total <span><%=sum%></span></li>
+							<li>Eco Tax <span><%=(sum*18)/100%></span></li>
+							<li>Shipping Cost <span>Free</span></li>
+							<li>Total <span><%=sum+((sum*18)/100)%></span></li>
+						</ul>
+							<a class="btn btn-default update" href="">Update</a>
+							<a class="btn btn-default check_out" href="">Check Out</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--/#do_action-->
+
+	<footer id="footer"><!--Footer-->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="companyinfo">
+							<h2><span>e</span>-shopper</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe1.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe2.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe3.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe4.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="address">
+							<img src="images/home/map.png" alt="" />
+							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Service</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Online Help</a></li>
+								<li><a href="">Contact Us</a></li>
+								<li><a href="">Order Status</a></li>
+								<li><a href="">Change Location</a></li>
+								<li><a href="">FAQ’s</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Quock Shop</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">T-Shirt</a></li>
+								<li><a href="">Mens</a></li>
+								<li><a href="">Womens</a></li>
+								<li><a href="">Gift Cards</a></li>
+								<li><a href="">Shoes</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Policies</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Terms of Use</a></li>
+								<li><a href="">Privecy Policy</a></li>
+								<li><a href="">Refund Policy</a></li>
+								<li><a href="">Billing System</a></li>
+								<li><a href="">Ticket System</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Company Information</a></li>
+								<li><a href="">Careers</a></li>
+								<li><a href="">Store Location</a></li>
+								<li><a href="">Affillate Program</a></li>
+								<li><a href="">Copyright</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 col-sm-offset-1">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<form action="#" class="searchform">
+								<input type="text" placeholder="Your email address" />
+								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
+	
+
+
+    <script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

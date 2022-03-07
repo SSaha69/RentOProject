@@ -1,0 +1,19 @@
+<% include partials/header.ejs %>
+<h1>Edit your Comment</h1>
+
+<form action="/comments/<%=comment._id%>/edit?_method=PUT" method="POST" >
+  
+    Rating:<br>
+    <input type="number" name="updatedcomment[rating]" value="<%= comment.rating %>"><br>
+    Review:<br>
+    <textarea name="updatedcomment[review]"><%= comment.review %></textarea><br><br>
+    <button>Submit</button>
+    <input type="reset">
+    
+</form>
+
+<!--<form action="/comments/<%=comment._id%>/delete?_method=DELETE" method="POST">-->
+<!--    <button>DELETE</delete>-->
+<!--</form>-->
+
+<% include partials/footer.ejs %>

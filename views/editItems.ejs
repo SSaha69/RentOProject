@@ -1,0 +1,43 @@
+<% include partials/header.ejs %>
+<h1>Edit <%=item.name%></h1>
+
+<form action="/my_items/<%=item._id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+    Item Name:<br>
+    <input type="text" name="name" value=<%=item.name%>><br>
+    
+    
+    Category of item:<br>
+    <input type="text" name="category" value=<%=item.category%> ><br>
+    
+    
+    Model-no of item:<br>
+    <input type="text" name="model" value=<%=item.model%>><br>
+    
+    No. of days for rent:<br>
+    <input type="number" name="days" value=<%=item.days%> ><br>
+    
+    Price per day:<br>
+    <input type="number" name="price_day" value=<%=item.price_day%>><br>
+    
+    
+    Price per week:<br>
+    <input type="number" name="price_week" value=<%=item.price_week%>><br>
+    
+    
+    Price per month:<br>
+    <input type="number" name="price_month" value=<%=item.price_month%> ><br>
+    
+    
+    Enter desccription:<br>
+    <textarea name="desc"><%=item.desc%></textarea><br><br>
+    
+    Image:
+    
+    
+    <img src="/uploads/<%=item.image %>">
+    <input type="file" name="image">
+    <button>Submit</button>
+    <input type="reset">
+</form>
+
+<% include partials/footer.ejs %>

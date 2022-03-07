@@ -1,0 +1,15 @@
+<% include partials/header.ejs %>
+<h1>Write a Comment</h1>
+
+<form action="/comments/<%=id%>/add" method="POST" >
+  
+    Rating:<br>
+    <input type="number" name="comment[rating]" ><br>
+    Review:<br>
+    <textarea name="comment[review]"></textarea><br><br>
+    
+    <button>Submit</button>
+    <input type="reset">
+    
+</form>
+<% include partials/header.ejs %>

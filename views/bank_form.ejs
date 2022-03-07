@@ -1,0 +1,11 @@
+<% include partials/header.ejs %>
+<h1>Enter bank details..</h1>
+
+<form method="POST" action="/bank_details/add">
+    <input type="text" name=name placeholder="Enter Account Holder Name">
+    <input type="number" name=account_no placeholder="Enter Account Number">
+    <input type="text" name=ifsc placeholder="Enter IFSC">
+    <button>Add</button>
+    </div>
+</form>
+<% include partials/footer.ejs %>

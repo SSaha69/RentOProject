@@ -1,0 +1,16 @@
+<% include partials/header.ejs %>
+<h1>Item page</h1>
+
+<% item.forEach(function(item){ %>
+    <h3><%= item.name %></h3><br>
+    <img src="/uploads/<%=item.image %>">
+    <br>
+    per day:<%=item.price_day%> <br>
+    per week:<%=item.price_week%><br>
+    per month:<%= item.price_month%> <br>
+    desc:<%=item.desc%>
+    user is :<%=item.username%>
+    <br>
+    <a href="/item/<%=item._id%>">View</a>
+    <% }); %>
+<% include partials/header.ejs %>
